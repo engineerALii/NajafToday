@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- 
+        ====================================================================
+        إعدادات SEO الأساسية و Meta Tags
+        ====================================================================
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- عنوان الصفحة -->
+    <title>منصة النجف اليوم | توثيق وجمال مدينة النجف الأشرف</title>
+    
+    <!-- وصف الصفحة -->
+    <meta name="description" content="منصة النجف اليوم تهدف إلى توثيق وتصوير مدينة النجف ونشر الإيجابية والجمال والمحتوى الثقافي والديني بصورة حديثة وعصرية.">
+    
+    <!-- كلمات مفتاحية -->
+    <meta name="keywords" content="النجف, النجف الأشرف, العتبة العلوية, صور النجف, سياحة دينية, ثقافة, العراق, النجف اليوم">
+    
+    <!-- مؤلف الموقع -->
+    <meta name="author" content="Eng. Ali Taos (@C4MAN)">
+    
+    <!-- Open Graph (Facebook/Social Media) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://najaf-today.com">
+    <meta property="og:title" content="منصة النجف اليوم | نبض المدينة المقدسة">
+    <meta property="og:description" content="اكتشف جمال النجف، تاريخها، وحاضرها المشرق عبر منصة النجف اليوم.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1576615277839-84381283d6a2?q=80&w=1200">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="منصة النجف اليوم">
+    <meta name="twitter:description" content="توثيق بصري ومعرفي لمدينة النجف الأشرف.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1576615277839-84381283d6a2?q=80&w=1200">
+
+    <!-- Schema Markup (JSON-LD) for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "منصة النجف اليوم",
+      "url": "https://najaf-today.com",
+      "logo": "https://najaf-today.com/images/logo.png",
+      "sameAs": [
+        "https://facebook.com/najaftoday",
+        "https://instagram.com/najaftoday"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "النجف الأشرف",
+        "addressCountry": "IQ"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "info@najaf-today.com"
+      }
+    }
+    </script>
+
+    <!-- استدعاء الخطوط العربية (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- استدعاء الأيقونات (Phosphor Icons - بديل خفيف وحديث) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- 
+        ====================================================================
+        ملف CSS (محاكاة css/style.css)
+        ====================================================================
+    -->
+    <style>
+        /* المتغيرات العامة (CSS Variables) لسهولة التعديل */
+        :root {
+            --color-primary: #113821;   /* أخضر ملكي داكن */
+            --color-primary-light: #1A4D2E;
+            --color-secondary: #D4AF37; /* ذهبي */
+            --color-secondary-light: #F4D03F; /* ذهبي مشرق */
+            --color-accent: #F3F8F4;    
+            --color-text: #2c3e50;      
+            --color-text-light: #7f8c8d;
+            --color-white: #FFFFFF;
+            --color-bg: #fdfdfd;
+            
+            --font-main: 'Tajawal', sans-serif;
+            
+            --transition-speed: 0.4s;
+            --border-radius: 24px; /* زوايا أكثر نعومة */
+            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 50px -10px rgba(26, 77, 46, 0.2);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* تصفير الإعدادات الأساسية (Reset) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d2b1a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-speed);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ----------------------------------------------------
+           Header & Navbar (Glassmorphism - No Straight Lines)
+        ---------------------------------------------------- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            padding: 25px 0;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            /* Removed border-bottom for cleaner look */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03); 
+            padding: 10px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: color 0.3s;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* تنسيق جديد لصورة الشعار - تعديل لعرضه بشكل كامل */
+        .logo img {
+            height: 60px; /* ارتفاع مناسب للشعار */
+            width: auto; /* العرض يتناسب تلقائياً مع الارتفاع */
+            object-fit: contain; /* عرض الصورة بالكامل دون قص */
+            border-radius: 0; /* إلغاء الشكل الدائري */
+            border: none; /* إلغاء الإطار */
+        }
+
+        header.scrolled .logo {
+            color: var(--color-primary);
+            text-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            /* تم إزالة الخلفية والإطار والظل لتظهر الروابط عائمة فوق صورة الهيرو */
+            background: transparent;
+            padding: 10px 0;
+            backdrop-filter: none;
+            box-shadow: none;
+            transition: all 0.3s;
+        }
+
+        header.scrolled .nav-links {
+            background: transparent;
+            padding: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .nav-links li a {
+            color: var(--color-white);
+            font-weight: 500;
+            position: relative;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        header.scrolled .nav-links li a {
+            color: var(--color-text);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            right: 0;
+            background-color: var(--color-secondary);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--color-white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        header.scrolled .menu-toggle {
+            color: var(--color-primary);
+        }
+
+        /* ----------------------------------------------------
+           Hero Section (Parallax & Gradient)
+        ---------------------------------------------------- */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://pic.imamhussain.org/photos/hd/1101-1151768381432.jpeg');
+            background-size: cover;
+            background-position: center;
+            /* Zoom Animation */
+            animation: kenBurns 25s infinite alternate;
+            z-index: -2;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Gradient Overlay */
+            background: linear-gradient(135deg, rgba(17, 56, 33, 0.85) 0%, rgba(26, 77, 46, 0.6) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            color: var(--color-white);
+            max-width: 850px;
+            padding: 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-weight: 800;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .hero h1 span {
+            color: transparent;
+            background: linear-gradient(to right, #D4AF37, #FFF59D, #D4AF37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 200%;
+            animation: shine 4s infinite linear;
+            display: block;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(45deg, var(--color-secondary), var(--color-secondary-light));
+            color: #1a4d2e;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5);
+            color: #000;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-white);
+            animation: bounce 2s infinite;
+            font-size: 2.2rem;
+            cursor: pointer;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* SVG Wave Separator */
+        .wave-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave-separator svg {
+            position: relative;
+            display: block;
+            width: calc(133% + 1.3px);
+            height: 110px;
+        }
+
+        .wave-separator .shape-fill {
+            fill: var(--color-bg);
+        }
+
+        /* ----------------------------------------------------
+           Sections Generic Styles
+        ---------------------------------------------------- */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: 800;
+        }
+
+        .section-header h2::after {
+            content: '♦'; /* decorative symbol */
+            display: block;
+            margin-top: 10px;
+            color: var(--color-secondary);
+            font-size: 1.5rem;
+        }
+
+        .section-header p {
+            color: var(--color-text-light);
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* ----------------------------------------------------
+           About Us Section (Updated Image Style)
+        ---------------------------------------------------- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            /* Updated to remove straight corners */
+            border-radius: 24px; 
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            /* Add simple transform for hover */
+            transition: transform 0.4s ease;
+        }
+
+        /* Removed the decorative background behind the image */
+        .about-image::before {
+            display: none;
+        }
+
+        .about-image:hover {
+            transform: translateY(-5px);
+        }
+
+        /* .about-image:hover::before rule removed since element is hidden */
+
+        .about-image img {
+            transition: transform 0.7s ease;
+            display: block;
+            border-radius: 24px;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+        
+        .about-text p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .feature-item i {
+            color: var(--color-secondary);
+            font-size: 1.8rem;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .feature-item span {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* ----------------------------------------------------
+           Gallery Section (Mosaic Layout)
+        ---------------------------------------------------- */
+        .gallery-section {
+            background-color: var(--color-accent);
+            /* Islamic Pattern Overlay (CSS only) */
+            background-image: radial-gradient(var(--color-secondary) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        /* Make some items larger in desktop */
+        @media (min-width: 992px) {
+            .gallery-item:nth-child(1) { grid-row: span 2; height: 725px; }
+            .gallery-item:nth-child(4) { grid-column: span 2; }
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 20px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .gallery-overlay h3 {
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 5px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Modal Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 56, 33, 0.95); /* Greenish dark bg */
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.4s;
+        }
+
+        .modal-content {
+            max-width: 85%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            border: 4px solid var(--color-white);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 50px;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+        
+        .close-modal:hover {
+            color: var(--color-secondary);
+        }
+
+        /* ----------------------------------------------------
+           Positives/Services Section (Glassmorphism Cards)
+        ---------------------------------------------------- */
+        #positives {
+            background: linear-gradient(180deg, var(--color-bg) 0%, #ebf5ee 100%);
+        }
+
+        .positives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+
+        .positive-card {
+            background: #fff;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        /* تأثير الخلفية عند الهوفر */
+        .positive-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: var(--color-primary);
+            z-index: -1;
+            transition: height 0.4s ease;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .positive-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
+        }
+        
+        .positive-card:hover::after {
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .icon-box {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--color-accent), #fff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--color-primary);
+            font-size: 2.2rem;
+            transition: all 0.4s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .positive-card:hover .icon-box {
+            background: #fff;
+            color: var(--color-secondary);
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .positive-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            transition: color 0.4s;
+        }
+
+        .positive-card p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            transition: color 0.4s;
+        }
+
+        .positive-card:hover h3, 
+        .positive-card:hover p {
+            color: #fff;
+        }
+
+        /* ----------------------------------------------------
+           Contact Section
+        ---------------------------------------------------- */
+        .contact-section {
+            background: #111;
+            color: #fff;
+            position: relative;
+        }
+        
+        .contact-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .contact-section .section-header h2 {
+            color: #fff;
+        }
+        .contact-section .section-header p {
+            color: #aaa;
+        }
+
+        .contact-container {
+            background: rgba(255, 255, 255, 0.05); /* Glass dark */
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-label {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            color: #aaa;
+            transition: 0.3s;
+            pointer-events: none;
+            padding: 0 5px;
+            background: transparent;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        textarea ~ .form-label {
+            top: 25px;
+        }
+
+        .form-control:focus ~ .form-label,
+        .form-control:not(:placeholder-shown) ~ .form-label {
+            top: -10px;
+            right: 10px;
+            font-size: 0.85rem;
+            color: var(--color-secondary);
+            background: #1a1a1a;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light));
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: var(--font-main);
+            transition: all 0.3s;
+        }
+        
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .error-msg {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            display: none;
+            text-align: right;
+        }
+
+        /* ----------------------------------------------------
+           Footer
+        ---------------------------------------------------- */
+        footer {
+            background-color: #0b1a11;
+            color: #fff;
+            padding: 80px 0 30px;
+            text-align: center;
+            border-top: 4px solid var(--color-primary);
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-white);
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        
+        .footer-logo span {
+            color: var(--color-secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            right: 0;
+            background-color: var(--color-secondary);
+            transition: 0.3s;
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s;
+            font-size: 1.4rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-icon:hover {
+            background: var(--color-secondary);
+            color: #000;
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* ----------------------------------------------------
+           Animations & Media Queries
+        ---------------------------------------------------- */
+        
+        /* Utility class for JS animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                order: -1;
+                height: 400px;
+                margin-bottom: 30px;
+            }
+            .about-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .gallery-item:nth-child(1) { grid-row: auto; height: 350px; }
+            .gallery-item:nth-child(4) { grid-column: auto; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(26, 77, 46, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+                z-index: 999;
+                padding: 0;
+                border-radius: 0;
+                border: none;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li a {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            /* Reduced image height for mobile */
+            .about-image {
+                height: 250px;
+            }
+            
+            .contact-container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="https://www.dropbox.com/scl/fi/zs0cm1idi65i0nb3oe0m2/IMG_1876.PNG?rlkey=ffq6a5sxyg0m8pd648mchjjdp&st=aogkqr9f&dl=1" alt="شعار منصة النجف اليوم" style="height: 45px; width: auto;">
+                النجف اليوم
+            </a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#gallery">معرض النجف</a></li>
+                <li><a href="#positives">إيجابيات</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
+                <h1>اكتشف روحانية<br><span>النجف الأشرف</span></h1>
+                <p>منصة رقمية فاخرة توثق جمال المدينة، عمق التاريخ، وإشراقة الحاضر برؤية فنية عصرية.</p>
+                <a href="#gallery" class="btn-main">استكشف المدينة</a>
+            </div>
+            
+            <a href="#about" class="scroll-down">
+                <i class="ph ph-caret-double-down"></i>
+            </a>
+
+            <!-- Wave Separator Bottom -->
+            <div class="wave-separator">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>من نحن</h2>
+                    <p>رؤيتنا لتوثيق هوية المدينة المقدسة بأسلوب عالمي</p>
+                </div>
+                
+                <div class="about-grid reveal">
+                    <div class="about-text">
+                        <h3>أكثر من مجرد منصة إعلامية</h3>
+                        <p>منصة "النجف اليوم" هي مبادرة إبداعية تهدف إلى إعادة اكتشاف مدينة النجف الأشرف بعيون فنية. نحن نؤمن بأن النجف ليست مجرد تاريخ، بل هي حياة متجددة تستحق أن تروى بأجمل الصور وأدق التفاصيل.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i class="ph-fill ph-camera"></i>
+                                <div>
+                                    <span>توثيق سينمائي</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="ph-fill ph-book-open"></i>
+                                <div>
+                                    <span>محتوى ثري</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="ph-fill ph-users"></i>
+                                <div>
+                                    <span>مجتمع متفاعل</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="ph-fill ph-globe-hemisphere-east"></i>
+                                <div>
+                                    <span>بوابة عالمية</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image Area -->
+                    <div class="about-image">
+                        <img src="https://www.dropbox.com/scl/fi/zs0cm1idi65i0nb3oe0m2/IMG_1876.PNG?rlkey=ffq6a5sxyg0m8pd648mchjjdp&st=906xbh41&dl=1" alt="منظر عام لمدينة النجف" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>معرض النجف</h2>
+                    <p>جولة بصرية في أروقة المدينة وتفاصيلها الساحرة</p>
+                </div>
+                
+                <div class="gallery-grid reveal">
+                    <!-- Gallery Item 1 (Tall) -->
+                    <div class="gallery-item">
+                        <img src="https://pic.imamhussain.org/photos/hd/1565-9501768055683.jpg" alt="العتبة العلوية المقدسة" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>العتبة العلوية</h3>
+                            <p>تحفة معمارية تعانق السماء</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item">
+                        <img src="https://media.imamali.net/rpic.php?i=../files/img_report/33g21azn3o.jpg&w=1100" alt="مكتبة النجف" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>كنوز المعرفة</h3>
+                            <p>مخطوطات وتراث فكري</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item">
+                        <img src="https://karbala-intel.net/filestorage/images/62b6a5aea249b.jpg" alt="أسواق النجف التراثية" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>السوق الكبير</h3>
+                            <p>عبق الماضي وروح التجارة</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 4 (Wide) -->
+                    <div class="gallery-item">
+                        <img src="https://almasra.iq/wp-content/uploads/2024/07/%D8%A7%D9%84%D9%86%D8%AC%D9%81.jpg" alt="غروب الشمس في النجف" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>سحر الغروب</h3>
+                            <p>لوحة فنية يرسمها الشفق</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-item">
+                        <img src="https://shiawaves.com/arabic/wp-content/uploads/sites/3/2025/01/photo_2025-01-11_03-26-02-780x470.jpg" alt="فنون إسلامية" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>زخارف إسلامية</h3>
+                            <p>دقة الهندسة والجمال</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-item">
+                        <img src="https://alwelayh.com/wp-content/uploads/2022/05/176-scaled.jpg" alt="طبيعة النجف" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>بحر النجف</h3>
+                            <p>واحة طبيعية ممتدة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Lightbox -->
+        <div class="modal" id="image-modal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="modal-img" src="" alt="عرض مكبر">
+        </div>
+
+        <!-- Positives Section -->
+        <section id="positives">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>لماذا النجف؟</h2>
+                    <p>مميزات تجعلها مدينة استثنائية عالمياً</p>
+                </div>
+                
+                <div class="positives-grid reveal">
+                    <div class="positive-card">
+                        <div class="icon-box">
+                            <i class="ph-fill ph-heart"></i>
+                        </div>
+                        <h3>كرم لا ينضب</h3>
+                        <p>مدينة المضايف المفتوحة، تستقبل ملايين الزوار سنويًا بحب وتفانٍ.</p>
+                    </div>
+                    
+                    <div class="positive-card">
+                        <div class="icon-box">
+                            <i class="ph-fill ph-student"></i>
+                        </div>
+                        <h3>منارة العلم</h3>
+                        <p>الحوزة العلمية العريقة، مركز إشعاع فكري يمتد لآلاف السنين.</p>
+                    </div>
+                    
+                    <div class="positive-card">
+                        <div class="icon-box">
+                            <i class="ph-fill ph-buildings"></i>
+                        </div>
+                        <h3>نهضة عمرانية</h3>
+                        <p>مشاريع حديثة وجسور وطرق ترسم ملامح المستقبل مع الحفاظ على الهوية.</p>
+                    </div>
+                    
+                    <div class="positive-card">
+                        <div class="icon-box">
+                            <i class="ph-fill ph-airplane-tilt"></i>
+                        </div>
+                        <h3>موقع استراتيجي</h3>
+                        <p>بوابة العراق الجوية ومحطة التقاء الحضارات عبر التاريخ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-bg-pattern"></div>
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>تواصل معنا</h2>
+                    <p>كن شريكاً في النجاح، شاركنا أفكارك</p>
+                </div>
+                
+                <div class="contact-container reveal">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" placeholder=" " required>
+                            <label for="name" class="form-label">الاسم الكامل</label>
+                            <div class="error-msg">يرجى إدخال اسم صحيح</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-control" placeholder=" " required>
+                            <label for="email" class="form-label">البريد الإلكتروني</label>
+                            <div class="error-msg">يرجى إدخال بريد إلكتروني صحيح</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" class="form-control" placeholder=" " required></textarea>
+                            <label for="message" class="form-label">رسالتك</label>
+                            <div class="error-msg">الرسالة لا يمكن أن تكون فارغة</div>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">النجف <span>اليوم</span></a>
+            
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#about">من نحن</a>
+                <a href="#gallery">المعرض</a>
+                <a href="#">سياسة الخصوصية</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="فيسبوك"><i class="ph-fill ph-facebook-logo"></i></a>
+                <a href="#" class="social-icon" aria-label="انستغرام"><i class="ph-fill ph-instagram-logo"></i></a>
+                <a href="#" class="social-icon" aria-label="تويتر"><i class="ph-fill ph-twitter-logo"></i></a>
+                <a href="#" class="social-icon" aria-label="يوتيوب"><i class="ph-fill ph-youtube-logo"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 منصة النجف اليوم. صمم بكل حب لمدينة النجف.
+                <br>
+                <span style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px; display: inline-block;">
+                    تطوير: المُهندس علي تاوس (<a href="https://instagram.com/C4MAN" target="_blank" style="color: var(--color-secondary);">@C4MAN</a>)
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+        ====================================================================
+        ملف JS (محاكاة js/main.js)
+        ====================================================================
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* --- 1. Sticky Navbar Effect --- */
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            /* --- 2. Mobile Menu Toggle --- */
+            const menuToggle = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const toggleIcon = menuToggle.querySelector('i');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                // Toggle Icon
+                if (navLinks.classList.contains('active')) {
+                    toggleIcon.classList.remove('ph-list');
+                    toggleIcon.classList.add('ph-x');
+                } else {
+                    toggleIcon.classList.remove('ph-x');
+                    toggleIcon.classList.add('ph-list');
+                }
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    toggleIcon.classList.remove('ph-x');
+                    toggleIcon.classList.add('ph-list');
+                });
+            });
+
+            /* --- 3. Scroll Reveal Animation (Intersection Observer) --- */
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1, // Trigger earlier
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            /* --- 4. Gallery Modal (Lightbox) --- */
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const closeModal = document.querySelector('.close-modal');
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.classList.add('active');
+                    modalImg.src = img.src;
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+
+            // Close modal when clicking outside image
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            /* --- 5. Contact Form Validation --- */
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Get Fields
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const message = document.getElementById('message');
+                
+                // Simple Validation Logic
+                if (name.value.trim().length < 3) {
+                    showError(name, 'الاسم يجب أن يكون أكثر من 3 حروف');
+                    isValid = false;
+                } else {
+                    clearError(name);
+                }
+
+                if (!validateEmail(email.value)) {
+                    showError(email, 'يرجى إدخال بريد إلكتروني صحيح');
+                    isValid = false;
+                } else {
+                    clearError(email);
+                }
+
+                if (message.value.trim() === '') {
+                    showError(message, 'الرسالة مطلوبة');
+                    isValid = false;
+                } else {
+                    clearError(message);
+                }
+
+                if (isValid) {
+                    // Simulation of sending data
+                    const btn = contactForm.querySelector('button');
+                    const originalText = btn.innerText;
+                    
+                    btn.innerText = 'جاري الإرسال...';
+                    btn.style.opacity = '0.7';
+                    
+                    setTimeout(() => {
+                        alert('شكراً لك! تم استلام رسالتك بنجاح.');
+                        contactForm.reset();
+                        btn.innerText = originalText;
+                        btn.style.opacity = '1';
+                    }, 1500);
+                }
+            });
+
+            function showError(input, msg) {
+                const formGroup = input.parentElement;
+                const errorDiv = formGroup.querySelector('.error-msg');
+                errorDiv.innerText = msg;
+                errorDiv.style.display = 'block';
+                input.style.borderColor = '#ff6b6b';
+            }
+
+            function clearError(input) {
+                const formGroup = input.parentElement;
+                const errorDiv = formGroup.querySelector('.error-msg');
+                errorDiv.style.display = 'none';
+                input.style.borderColor = 'rgba(255, 255, 255, 0.1)'; // Reset to default style
+            }
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            }
+        });
+    </script>
+</body>
+</html>
